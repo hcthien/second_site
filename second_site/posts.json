@@ -1,0 +1,67 @@
+[
+  {
+    "title": "My updated post",
+    "content": "My first updated post!\r\n\r\n This is exciting!",
+    "user_id": 7
+  },
+  {
+    "title": "A second post",
+    "content": "This document explains the usage of Django’s authentication system in its default configuration. This configuration has evolved to serve the most common project needs, handling a reasonably wide range of tasks, and has a careful implementation of passwords and permissions. For projects where authentication needs differ from the default, Django supports extensive extension and customization of authentication.",
+    "user_id": 2
+  },
+  {
+    "title": "Using mixins with class-based views",
+    "content": "For this reason, Django also provides a number of mixins that provide more discrete functionality. Template rendering, for instance, is encapsulated in the TemplateResponseMixin. The Django reference documentation contains full documentation of all the mixins.",
+    "user_id": 9
+  },
+  {
+    "title": "Context and template responses",
+    "content": "Every built in view which returns a TemplateResponse will call the render_to_response() method that TemplateResponseMixin provides. Most of the time this will be called for you (for instance, it is called by the get() method implemented by both TemplateView and DetailView); similarly, it’s unlikely that you’ll need to override it, although if you want your response to return something not rendered via a Django template then you’ll want to do it. For an example of this, see the JSONResponseMixin example.",
+    "user_id": 3
+  },
+  {
+    "title": "Building up Django’s generic class-based views",
+    "content": "Let’s look at how two of Django’s generic class-based views are built out of mixins providing discrete functionality. We’ll consider DetailView, which renders a “detail” view of an object, and ListView, which will render a list of objects, typically from a queryset, and optionally paginate them. This will introduce us to four mixins which between them provide useful functionality when working with either a single Django object, or multiple objects. There are also mixins involved in the generic edit views (FormView, and the model-specific views CreateView, UpdateView and DeleteView), and in the date-based generic views. These are covered in the mixin reference documentation.",
+    "user_id": 8
+  },
+  {
+    "title": "DetailView: working with a single Django object",
+    "content": "To show the detail of an object, we basically need to do two things: we need to look up the object and then we need to make a TemplateResponse with a suitable template, and that object as context. To get the object, DetailView relies on SingleObjectMixin, which provides a get_object() method that figures out the object based on the URL of the request (it looks for pk and slug keyword arguments as declared in the URLConf, and looks the object up either from the model attribute on the view, or the queryset attribute if that’s provided). SingleObjectMixin also overrides get_context_data(), which is used across all Django’s built in class-based views to supply context data for template renders.",
+    "user_id": 7
+  },
+  {
+    "title": "ListView: working with many Django objects",
+    "content": "To make a TemplateResponse, ListView then uses MultipleObjectTemplateResponseMixin; as with SingleObjectTemplateResponseMixin above, this overrides get_template_names() to provide a range of options, with the most commonly-used being <app_label>/<model_name>_list.html, with the _list part again being taken from the template_name_suffix attribute. (The date based generic views use suffixes such as _archive, _archive_year and so on to use different templates for the various specialized date-based list views.)",
+    "user_id": 3
+  },
+  {
+    "title": "A second post",
+    "content": "This document explains the usage of Django’s authentication system in its default configuration. This configuration has evolved to serve the most common project needs, handling a reasonably wide range of tasks, and has a careful implementation of passwords and permissions. For projects where authentication needs differ from the default, Django supports extensive extension and customization of authentication.",
+    "user_id": 2
+  },
+  {
+    "title": "Using mixins with class-based views",
+    "content": "For this reason, Django also provides a number of mixins that provide more discrete functionality. Template rendering, for instance, is encapsulated in the TemplateResponseMixin. The Django reference documentation contains full documentation of all the mixins.",
+    "user_id": 9
+  },
+  {
+    "title": "Context and template responses",
+    "content": "Every built in view which returns a TemplateResponse will call the render_to_response() method that TemplateResponseMixin provides. Most of the time this will be called for you (for instance, it is called by the get() method implemented by both TemplateView and DetailView); similarly, it’s unlikely that you’ll need to override it, although if you want your response to return something not rendered via a Django template then you’ll want to do it. For an example of this, see the JSONResponseMixin example.",
+    "user_id": 3
+  },
+  {
+    "title": "Building up Django’s generic class-based views",
+    "content": "Let’s look at how two of Django’s generic class-based views are built out of mixins providing discrete functionality. We’ll consider DetailView, which renders a “detail” view of an object, and ListView, which will render a list of objects, typically from a queryset, and optionally paginate them. This will introduce us to four mixins which between them provide useful functionality when working with either a single Django object, or multiple objects. There are also mixins involved in the generic edit views (FormView, and the model-specific views CreateView, UpdateView and DeleteView), and in the date-based generic views. These are covered in the mixin reference documentation.",
+    "user_id": 8
+  },
+  {
+    "title": "DetailView: working with a single Django object",
+    "content": "To show the detail of an object, we basically need to do two things: we need to look up the object and then we need to make a TemplateResponse with a suitable template, and that object as context. To get the object, DetailView relies on SingleObjectMixin, which provides a get_object() method that figures out the object based on the URL of the request (it looks for pk and slug keyword arguments as declared in the URLConf, and looks the object up either from the model attribute on the view, or the queryset attribute if that’s provided). SingleObjectMixin also overrides get_context_data(), which is used across all Django’s built in class-based views to supply context data for template renders.",
+    "user_id": 7
+  },
+  {
+    "title": "ListView: working with many Django objects",
+    "content": "To make a TemplateResponse, ListView then uses MultipleObjectTemplateResponseMixin; as with SingleObjectTemplateResponseMixin above, this overrides get_template_names() to provide a range of options, with the most commonly-used being <app_label>/<model_name>_list.html, with the _list part again being taken from the template_name_suffix attribute. (The date based generic views use suffixes such as _archive, _archive_year and so on to use different templates for the various specialized date-based list views.)",
+    "user_id": 3
+  }
+]
